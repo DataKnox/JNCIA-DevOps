@@ -1,0 +1,30 @@
+{
+    "person": {
+        "first_name": "Alex",
+        "last_name": "Rivera",
+        "age": 34,
+        "email": "alex.rivera@example.com",
+        "married": true,
+        "address": {
+            "street": "123 Maple Street",
+            "city": "Denver",
+            "state": "CO",
+            "postal_code": "80203"
+        },
+        "phone_numbers": [
+            {
+                "type": "mobile",
+                "number": "555-123-4567"
+            },
+            {
+                "type": "work",
+                "number": "555-987-6543"
+            }
+        ],
+        "skills": [
+            "Python",
+            "Networking",
+            "Automation"
+        ]
+    }
+}

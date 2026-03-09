@@ -1,0 +1,44 @@
+router:
+  hostname: R1
+  model: MX204
+  vendor: Juniper
+
+  management:
+    ip_address: 10.10.10.1
+    netmask: 255.255.255.0
+    gateway: 10.10.10.254
+
+  interfaces:
+    - name: ge-0/0/0
+      description: Uplink to ISP
+      enabled: true
+      ip_address: 203.0.113.2
+      netmask: 255.255.255.252
+
+    - name: ge-0/0/1
+      description: LAN Interface
+      enabled: true
+      ip_address: 192.168.10.1
+      netmask: 255.255.255.0
+
+  routing:
+    static_routes:
+      - destination: 0.0.0.0/0
+        next_hop: 203.0.113.1
+
+    protocols:
+      ospf:
+        enabled: true
+        area: 0.0.0.0
+
+      bgp:
+        enabled: true
+        local_as: 65001
+        neighbors:
+          - neighbor_ip: 203.0.113.1
+            remote_as: 64512
+
+  services:
+    ssh: true
+    snmp: true
+    netconf: true

@@ -1,0 +1,24 @@
+{
+    "car": {
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2022,
+        "vin": "1HGCM82633A123456",
+        "color": "blue",
+        "electric": false,
+        "engine": {
+            "type": "inline-4",
+            "horsepower": 203,
+            "fuel_type": "gasoline"
+        },
+        "features": [
+            "backup_camera",
+            "adaptive_cruise_control",
+            "lane_assist"
+        ],
+        "owner": {
+            "name": "Alex Rivera",
+            "license_number": "D12345678"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<router>
+    <hostname>R1</hostname>
+    <model>MX204</model>
+    <vendor>Juniper</vendor>
+
+    <management>
+        <ip_address>10.10.10.1</ip_address>
+        <netmask>255.255.255.0</netmask>
+        <gateway>10.10.10.254</gateway>
+    </management>
+
+    <interfaces>
+        <interface>
+            <name>ge-0/0/0</name>
+            <description>Uplink to ISP</description>
+            <enabled>true</enabled>
+            <ip_address>203.0.113.2</ip_address>
+            <netmask>255.255.255.252</netmask>
+        </interface>
+
+        <interface>
+            <name>ge-0/0/1</name>
+            <description>LAN Interface</description>
+            <enabled>true</enabled>
+            <ip_address>192.168.10.1</ip_address>
+            <netmask>255.255.255.0</netmask>
+        </interface>
+    </interfaces>
+
+    <routing>
+        <static_routes>
+            <route>
+                <destination>0.0.0.0/0</destination>
+                <next_hop>203.0.113.1</next_hop>
+            </route>
+        </static_routes>
+
+        <protocols>
+            <ospf>
+                <enabled>true</enabled>
+                <area>0.0.0.0</area>
+            </ospf>
+
+            <bgp>
+                <enabled>true</enabled>
+                <local_as>65001</local_as>
+                <neighbors>
+                    <neighbor>
+                        <neighbor_ip>203.0.113.1</neighbor_ip>
+                        <remote_as>64512</remote_as>
+                    </neighbor>
+                </neighbors>
+            </bgp>
+        </protocols>
+    </routing>
+
+    <services>
+        <ssh>true</ssh>
+        <snmp>true</snmp>
+        <netconf>true</netconf>
+    </services>
+</router>
