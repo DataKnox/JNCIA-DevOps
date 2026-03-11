@@ -1,0 +1,27 @@
+<interfaces>
+    <interface>
+        <name>fxp0</name>
+        <unit>
+            <name>0</name>
+            <family>
+                <inet>
+                    <dhcp>
+                        <vendor-id>Juniper-ex9214-VM69A08EA56D</vendor-id>
+                    </dhcp>
+                </inet>
+                <inet6>
+                    <dhcpv6-client>
+                        <client-type>stateful</client-type>
+                        <client-ia-type>
+                            <name>ia-na</name>
+                        </client-ia-type>
+                        <client-identifier>
+                            <duid-type>duid-ll</duid-type>
+                        </client-identifier>
+                        <vendor-id>Juniper:ex9214:VM69A08EA56D</vendor-id>
+                    </dhcpv6-client>
+                </inet6>
+            </family>
+        </unit>
+    </interface>
+</interfaces>
